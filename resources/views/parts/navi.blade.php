@@ -15,7 +15,7 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation" >
                 <span class="navbar-toggler-icon" ></span>
             </button>
-            <a class="navbar-brand" href="#"><h3>商品管理システム</h3></a>
+            <a class="navbar-brand" href="#"><h3>食品商品管理システム</h3></a>
                 <div class="collapse navbar-collapse justify-content-start ">
                 <ul class="navbar-nav">
                     <!-- 全員に表示される   -->

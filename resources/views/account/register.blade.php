@@ -12,7 +12,7 @@
     <!-- アカウント登録入力フォーム -->
     <div id="register-form" class="row justify-content-center align-items-center" style="padding-top:50%;" >
         <form action="/account/register" method="post" class="form-signin ">
-        <h1 class="h3 mb-3 font-weight-normal text-center">商品管理システム<br>アカウント登録</h1>
+        <h1 class="h3 mb-3 font-weight-normal text-center">食品商品管理システム<br>アカウント登録</h1>
             @csrf      
                 <dev class="form-floating">
                     <input type="text" id="name" name="name" class="form-control mt-5 mb-3" value="{{ old('name') }}" required >

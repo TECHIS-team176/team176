@@ -12,7 +12,7 @@
     <!-- ログイン入力フォーム -->
     <div id="login-form" class="form-signin w-100 m-auto" style="padding-top:50%;">
         <form action="/" method="post" class="form-signin">
-            <h1 class="h3 mb-3 font-weight-normal text-center">商品管理システム<br>ログイン</h1>
+            <h1 class="h3 mb-3 font-weight-normal text-center">食品商品管理システム<br>ログイン</h1>
             @csrf          
                 <div class="form-floating mb-3">
                     <input type="email" id="email" name="email" class="form-control mt-5 mb-3"  value="{{ old('email') }}" required>
