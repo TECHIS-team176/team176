@@ -42,6 +42,7 @@ Route::group(['middleware' => 'auth'],function(){
     //HOME画面表示
     Route::get('/home',[App\Http\Controllers\HomeController::class,'showHome']);
 
+    //商品一覧画面表示
     Route::get('/search', [App\Http\Controllers\SearchController::class, 'index']);
     Route::get('/search/detail/{id}', [App\Http\Controllers\SearchController::class, 'detail']);
 });
