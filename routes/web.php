@@ -35,19 +35,31 @@ Route::get('/',[App\Http\Controllers\AccountController::class,'showLogin'])->mid
 Route::post('/',[App\Http\Controllers\AccountController::class,'login']);
 
 //ログアウト処理
-Route::get('/logout/{id}',[App\Http\Controllers\AccountController::class,'logout'])->name('logout');
+Route::get('/logout',[App\Http\Controllers\AccountController::class,'logout'])->name('logout');
 
 //ログインしているユーザーのみ許可
 Route::group(['middleware' => 'auth'],function(){
     //HOME画面表示
     Route::get('/home',[App\Http\Controllers\HomeController::class,'showHome']);
+
+    Route::get('/search', [App\Http\Controllers\SearchController::class, 'index']);
+    Route::get('/search/detail/{id}', [App\Http\Controllers\SearchController::class, 'detail']);
 });
 
 //ログインしている管理者のみ許可
 Route::group(['middleware' => ['auth','can:管理者']],function(){
-    //TODO:商品管理画表示 
-
-    //TODO:ユーザー管理画表示 
+    //商品管理画表示
+    Route::get('/item', [App\Http\Controllers\ItemController::class, 'index']);
+    Route::get('/item/create', [App\Http\Controllers\ItemController::class, 'create']);
+    Route::post('/item/store', [App\Http\Controllers\ItemController::class, 'store']);
+    Route::get('/item/edit/{id}', [App\Http\Controllers\ItemController::class, 'edit']);
+    Route::post('/item/update/{id}', [App\Http\Controllers\ItemController::class, 'update']);
+    Route::post('/item/destroy/{id}', [App\Http\Controllers\ItemController::class, 'destroy']);
+    
+    //ユーザー管理画表示 
+    Route::get('/user', [App\Http\Controllers\UserController::class, 'index']);
+    Route::get('/user/edit/{id}', [App\Http\Controllers\UserController::class, 'edit']);
+    Route::post('/user/update', [App\Http\Controllers\UserController::class, 'update']);
 
 });
 

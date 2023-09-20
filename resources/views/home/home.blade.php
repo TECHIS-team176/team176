@@ -9,10 +9,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"></head>
 
     <title>ホーム画面</title>
-    @include('parts.navi')
+   
   </head>
   
   <body>
+      @include('parts.navi')
     <!-- HOMEイメージ画像 -->
       <div class="" style="margin-top:200px;">
         <img src="img_sng/foodiesfeed.com_healthy-foods.jpg" class="text-align:center mt-5" style="width:70%; display: block; margin:auto;" alt="">

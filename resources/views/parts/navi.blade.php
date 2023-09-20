@@ -44,7 +44,7 @@
 
                 <!-- ログアウトボタン表示 -->
                 <div class="nav-item">
-                <a href="/logout/{id}"  class="btn btn-secondary me-5">ログアウト</a>
+                <a href="/logout"  class="btn btn-secondary me-5">ログアウト</a>
                 </div>
         </nav> 
     </head>  
