@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 </head>
 <body>
+@include('parts.navi')
     <h1 class="mb-4" style="margin-left: 30px;">商品情報一覧</h1>
 
     <div class="text-end" style="margin-right: 30px;">
@@ -46,7 +47,7 @@
         </table>
     </div>
 
-    {{ $items->links() }}
+    {{ $items->links('pagination::bootstrap-4') }}
 
     <!-- Bootstrap5 js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>

@@ -12,7 +12,7 @@ class ItemController extends Controller
     public function index()
     {
         // $items = Item::all(); // 全ての商品を取得
-        $items = Item::paginate(10); // ページネーション(10件)
+        $items = Item::paginate(5); // ページネーション(10件)
 
         return view('item.index', compact('items'));
     }
