@@ -17,13 +17,15 @@
             <th>権限</th>
             <th>編集</th>
         </tr>
+        @foreach($users as $user)
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{{$user->id}}</td>
+            <td>{{$user->name}}</td>
+            <td>{{$user->email}}</td>
+            <td>{{$user->role}}</td>
+            <td><a href="/user/edit/{{$user->id}}">編集</a></td>
         </tr>
+        @endforeach
     </table>
 </div>
 </body>
