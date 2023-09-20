@@ -14,10 +14,10 @@ class SearchController extends Controller
     {
         if($request->search)
         {
-            $items=Item::where('name','LIKE','%'.$request->search.'%')->get();
+            $items=Item::where('name','LIKE','%'.$request->search.'%')->paginate(10);
         }
         else{
-            $items=Item::all();
+            $items=Item::paginate(10);
         }
         return view('search.index',compact('items'));
 
@@ -29,6 +29,6 @@ class SearchController extends Controller
         $item=Item::find($request->id);
         return view('search.detail',compact('item'));
     }
-
+    
  
 }
