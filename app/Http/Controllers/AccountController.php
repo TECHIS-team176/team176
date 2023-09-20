@@ -117,14 +117,5 @@ class AccountController extends Controller
     }
 
 
-/**
- * INDEX画面表示　（確認用/管理者のみ表示される)
- */
-
-    public function showIndex()
-    {
-        return view('account.index');
-    }
-
 
 }

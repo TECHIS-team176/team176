@@ -11,7 +11,7 @@
     <title></title>
 
         <!-- ナビゲーションバー -->
-        <nav class="navbar navbar-expand-sm navbar-info bg-info fixed-top mb-3" >
+        <nav class="navbar navbar-expand-sm navbar-info bg-info fixed-top " >
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation" >
                 <span class="navbar-toggler-icon" ></span>
             </button>
