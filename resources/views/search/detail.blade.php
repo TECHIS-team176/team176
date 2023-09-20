@@ -7,6 +7,7 @@
     <title>商品詳細</title>
 </head>
 <body>
+    @include('parts.navi')
     <div class="container">
     <h1>商品詳細</h1>
     <table class="table">
@@ -56,5 +57,6 @@
         </tr>
     </table>
 </div>
+
 </body>
 </html>
