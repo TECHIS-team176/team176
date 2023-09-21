@@ -18,4 +18,14 @@ class UserController extends Controller
         $user=User::find($request->id);
         return view('user.edit',compact('user'));
     }
+
+    public function update(Request $request)
+    {
+        $user=User::find($request->id);
+        $user->name=$request->name;
+        $user->email=$request->email;
+        $user->role=$request->role;
+        $user->save();
+        return redirect('/user');
+    }
 }
