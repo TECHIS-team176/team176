@@ -15,7 +15,7 @@
   <body>
       @include('parts.navi')
     <!-- HOMEイメージ画像 -->
-      <div class="" style="margin-top:200px;">
+      <div class="" style="">
         <img src="img_sng/foodiesfeed.com_healthy-foods.jpg" class="text-align:center mt-5" style="width:70%; display: block; margin:auto;" alt="">
       </div>
 
