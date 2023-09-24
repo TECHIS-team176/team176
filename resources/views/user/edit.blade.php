@@ -7,11 +7,12 @@
     <title>ユーザー編集画面</title>
  </head>
  <body>
+   <div class="container">
     <h1>ユーザー編集画面</h1>
     <a href="/user">戻る</a>
     <form action="/user/update" method="post">
       @csrf
-    <table>
+    <table class="table">
       <tr>
          <th>ID</th>
          <td>{{$user->id}}</td>
@@ -37,8 +38,10 @@
       
     </table>
     <input type="hidden" name="id" value="{{$user->id}}">
-    <input type="submit" value="送信">
+    <input type="submit" value="送信" class="btn btn-primary">
     </form>
-    <a href="/user/delete">削除</a>
+    <br>
+    <a href="/user/delete/{{$user->id}}" class="btn btn-primary">削除</a>
+</div>
  </body>
  </html>

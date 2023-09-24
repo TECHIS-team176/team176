@@ -24,7 +24,7 @@
             <td>{{$user->name}}</td>
             <td>{{$user->email}}</td>
             <td>@if($user->role==0) 利用者 @else 管理者 @endif</td>
-            <td><a href="/user/edit/{{$user->id}}">編集</a></td>
+            <td><a href="/user/edit/{{$user->id}}" class="btn btn-primary btn-sm">編集</a></td>
         </tr>
         @endforeach
     </table>
