@@ -47,7 +47,7 @@
             <tbody>
             @foreach ($items as $index => $item) <!-- $indexを使用して行番号を生成 -->
                 <tr>
-                    <td class="align-middle">{{ $index + 1 }}</td> <!-- 行番号を表示 -->
+                    <td class="align-middle">{{ ($items->currentPage() - 1) * $items->perPage() + $loop->iteration }}</td> <!-- 行番号を表示 -->
                     <td class="align-middle">{{ $item->id }}</td>
                     <td class="align-middle">{{ $item->name }}</td>
                     <td class="align-middle">
