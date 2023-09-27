@@ -73,6 +73,7 @@
                 <div class="mb-3">
                 <label for="img" class="form-label">商品画像:</label>
                 <input id="img" type="file" name="img" class="form-control" value="{{ old('img',$item->img) }}">
+                <label for="img" class="form-label text-danger">*画像を変更しない場合は選択不要です</label>
                     @error('img')
                     <div class="text-danger">{{ $message }}</div>
                     @enderror

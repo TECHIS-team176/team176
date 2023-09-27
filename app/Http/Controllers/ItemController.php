@@ -21,7 +21,7 @@ class ItemController extends Controller
             7 => 'その他',
         ];
         // $items = Item::all(); // 全ての商品を取得
-        $items = Item::paginate(5); // ページネーション(10件)
+        $items = Item::paginate(10); // ページネーション(10件)
 
         return view('item.index', compact('items', 'types'));
     }
@@ -102,7 +102,7 @@ class ItemController extends Controller
             'type' => 'required',
             'stock' => 'required|numeric',
             'detail' => 'required|max:500',
-            'comment' => 'required', 
+            'comment' => 'required|max:100', 
             'img'=> 'nullable|max:50|mimes:jpg,jpeg,png,gif',
         ],
         [
@@ -115,6 +115,7 @@ class ItemController extends Controller
             'stock.numeric' => '*入力は数字のみです',
             'detail.required' => '*詳細は必須です',
             'comment' => '*編集理由を入力してください', 
+            'comment.max' => '*編集理由は100文字以内です',
             'img.mimes' => '*画像のフォーマットが無効です',
             'img.max' => '*画像は50KB以内です',
         ]);
