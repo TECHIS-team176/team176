@@ -61,7 +61,7 @@ Route::group(['middleware' => ['auth','can:管理者']],function(){
     Route::get('/user', [App\Http\Controllers\UserController::class, 'index']);
     Route::get('/user/edit/{id}', [App\Http\Controllers\UserController::class, 'edit']);
     Route::post('/user/update', [App\Http\Controllers\UserController::class, 'update']);
-
+    Route::get('/user/delete/{id}', [App\Http\Controllers\UserController::class, 'delete']);
 });
 
 

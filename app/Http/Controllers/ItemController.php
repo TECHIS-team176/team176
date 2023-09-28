@@ -11,10 +11,19 @@ class ItemController extends Controller
     // 商品一覧表示
     public function index()
     {
+        $types = [
+            1 => '果物',
+            2 => '野菜',
+            3 => '肉',
+            4 => '魚',
+            5 => '調味料',
+            6 => '飲料',
+            7 => 'その他',
+        ];
         // $items = Item::all(); // 全ての商品を取得
-        $items = Item::paginate(5); // ページネーション(10件)
+        $items = Item::paginate(10); // ページネーション(10件)
 
-        return view('item.index', compact('items'));
+        return view('item.index', compact('items', 'types'));
     }
 
     // 商品登録フォーム表示
@@ -93,7 +102,7 @@ class ItemController extends Controller
             'type' => 'required',
             'stock' => 'required|numeric',
             'detail' => 'required|max:500',
-            'comment' => 'required', 
+            'comment' => 'required|max:100', 
             'img'=> 'nullable|max:50|mimes:jpg,jpeg,png,gif',
         ],
         [
@@ -106,16 +115,22 @@ class ItemController extends Controller
             'stock.numeric' => '*入力は数字のみです',
             'detail.required' => '*詳細は必須です',
             'comment' => '*編集理由を入力してください', 
-            'img.image' => '*画像のフォーマットが無効です',
+            'comment.max' => '*編集理由は100文字以内です',
+            'img.mimes' => '*画像のフォーマットが無効です',
             'img.max' => '*画像は50KB以内です',
         ]);
 
         // 編集時に画像が含まれている場合にDBへ保存する方法
+        // if ($encoded_image) {
+        //     $record = Item::find($id); // 更新対象のレコードを取得
+        //     $record->img = $encoded_image; // データベースの画像列を更新
+        //     $encoded_image = base64_encode($image);
+        // }
         $encoded_image=null;
         if ($request->hasFile('img')) {
             $image = file_get_contents($request->img);
             $encoded_image = base64_encode($image);
-        }
+        
 
         // 商品をデータベースで更新
         $item->update([
@@ -129,6 +144,18 @@ class ItemController extends Controller
             'img' => $encoded_image,
             'comment' => $request->comment,
         ]);
+        } else {
+            $item->update([
+                'user_id' => Auth::id(),
+                'name' => $request->name,
+                'price' => $request->price,
+                'type' => $request->type,
+                'stock' => $request->stock,
+                'detail' => $request->detail,
+                'img' => $item->img, // 既存の画像データをそのまま使う
+                'comment' => $request->comment,
+    ]);
+        }
 
         return redirect('/item')->with('success', '商品を更新しました');
     }

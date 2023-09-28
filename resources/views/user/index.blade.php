@@ -7,6 +7,7 @@
     <title>ユーザー一覧画面</title>
 </head>
 <body>
+@include('parts.navi')
     <div class="container">
     <h1>ユーザー一覧画面</h1>
     <table class="table">
@@ -17,13 +18,15 @@
             <th>権限</th>
             <th>編集</th>
         </tr>
+        @foreach($users as $user)
         <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
+            <td>{{$user->id}}</td>
+            <td>{{$user->name}}</td>
+            <td>{{$user->email}}</td>
+            <td>@if($user->role==0) 利用者 @else 管理者 @endif</td>
+            <td><a href="/user/edit/{{$user->id}}" class="btn btn-primary btn-sm">編集</a></td>
         </tr>
+        @endforeach
     </table>
 </div>
 </body>
