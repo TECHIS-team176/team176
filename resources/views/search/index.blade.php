@@ -55,6 +55,7 @@
     </div>
         <div class="pagination justify-content-center">
        {{$items->appends(request()->query())->links('pagination::bootstrap-4')}}
+       
        </div>
 
 </body>
