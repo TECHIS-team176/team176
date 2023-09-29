@@ -30,7 +30,7 @@
                 </dev>           
                 <div class="form-floating">
                     <input type="password" id="password" name="password" class="form-control mb-3" value="{{ old('password') }}" required >
-                    <label for="password" class="form-label">パスワード</label>
+                    <label for="password" class="form-label">パスワード(8文字以上)</label>
                     @error('password')
                         <div class="alert alert-danger">{{ $message }}</div>
                     @enderror
