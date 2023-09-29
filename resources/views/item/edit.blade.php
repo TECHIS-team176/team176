@@ -32,7 +32,7 @@
                 <div class="mb-3">
                     <label for="type" class="form-label">種類:</label>
                     <select id="type" type="text" name="type" class="form-control">
-                        <option value=""> 選択してください </option>
+                        <option value="99"> 選択してください </option>
                         @foreach([1 => '果物', 2 => '野菜', 3 => '肉', 4 => '魚', 5 => '調味料', 6 => '飲料', 7 => 'その他',] as $value => $label)
                             <!-- <option value="{{ $value }}" {{ $item->type == $value ? 'selected' : '' }}>{{ $label }}</option> -->
                             <option value="{{ $value }}" {{ old('type', $item->type) == $value ? 'selected' : '' }}>{{ $label }}</option>
