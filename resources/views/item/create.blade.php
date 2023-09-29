@@ -32,7 +32,7 @@
             <div class="mb-3">
                 <label for="type" class="form-label">種類:</label>
                 <select id="type" type="text" name="type" class="form-control" value="{{ old('type') }}">
-                    <option> 選択してください </option>
+                    <option value="99"> 選択してください </option>
                     <option value="1">果物</option>
                     <option value="2">野菜</option>
                     <option value="3">肉</option>

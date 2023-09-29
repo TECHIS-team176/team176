@@ -40,7 +40,7 @@ class ItemController extends Controller
         $this->validate($request, [
             'name' => 'required|max:100', // requiredは必須
             'price' => 'required|numeric',
-            'type' => 'required',
+            'type' => 'required|max:1',
             'stock' => 'required|numeric',
             'detail' => 'required|max:500',
             'img'=> 'nullable|max:50|mimes:jpg,jpeg,png,gif', // max:50は最大50KBまでという意味
@@ -50,10 +50,11 @@ class ItemController extends Controller
             'name.max' => '*商品名は100文字以内です',
             'price.required' => '*価格は必須です',
             'price.numeric' => '*入力は数字のみです',
-            'type.required' => '*種類は必須です',
+            'type.max' => '*種類は必須です',
             'stock.required' => '*在庫数は必須です',
             'stock.numeric' => '*入力は数字のみです',
             'detail.required' => '*詳細は必須です',
+            'detail.max' => '*詳細は500文字以内です',
             'img.mimes' => '*画像のフォーマットが無効です',
             'img.max' => '*画像は50KB以内です',
         ]);
@@ -99,7 +100,7 @@ class ItemController extends Controller
         $request->validate([
             'name' => 'required|max:100', 
             'price' => 'required|numeric',
-            'type' => 'required',
+            'type' => 'required|max:1',
             'stock' => 'required|numeric',
             'detail' => 'required|max:500',
             'comment' => 'required|max:100', 
@@ -110,10 +111,11 @@ class ItemController extends Controller
             'name.max' => '*商品名は100文字以内です',
             'price.required' => '*価格は必須です',
             'price.numeric' => '*入力は数字のみです',
-            'type.required' => '*種類は必須です',
+            'type.max' => '*種類は必須です',
             'stock.required' => '*在庫数は必須です',
             'stock.numeric' => '*入力は数字のみです',
             'detail.required' => '*詳細は必須です',
+            'detail.max' => '*詳細は500文字以内です',
             'comment' => '*編集理由を入力してください', 
             'comment.max' => '*編集理由は100文字以内です',
             'img.mimes' => '*画像のフォーマットが無効です',
