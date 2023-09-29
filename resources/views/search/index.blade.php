@@ -24,9 +24,9 @@
         <tr>
             <th>商品番号</th>
             <th>商品名</th>
-            <th>金額</th>
+            <th>価格</th>
             <th>種別</th>
-            <th>数量</th>
+            <th>在庫数</th>
             <th>商品詳細</th>
         </tr>     
         @foreach($items as $item)  
@@ -34,7 +34,7 @@
         <tr>
             <td>{{$item->id}}</td>
             <td>{{$item->name}}</td>
-            <td>{{$item->price}}</td>
+            <td>{{number_format($item->price)}}</td>
             <td>
                 @switch ($item->type)
                     @case (1) 果物 @break
@@ -47,7 +47,7 @@
                 @endswitch
                     
             </td>
-            <td>{{$item->stock}}</td>
+            <td>{{number_format($item->stock)}}</td>
             <td><a href="/search/detail/{{$item->id}}">商品詳細</a></td>
         </tr>        
         @endforeach
@@ -55,7 +55,7 @@
     </div>
         <div class="pagination justify-content-center">
        {{$items->appends(request()->query())->links('pagination::bootstrap-4')}}
-       
+
        </div>
 
 </body>
