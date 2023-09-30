@@ -10,6 +10,9 @@
     @include('parts.navi')
     <div class="container">
     <h1>商品詳細</h1>
+    <div class="text-end" style="margin-right: 30px;">
+                <a href="{{url()->previous()}}" class="btn btn-primary mb-3">商品一覧に戻る</a>
+            </div>
     <table class="table">
         <tr>
             <th>商品番号</th>
@@ -20,8 +23,8 @@
             <td>{{$item->name}}</td>
         </tr>
         <tr>
-            <th>金額</th>
-            <td>{{$item->price}}</td>
+            <th>価格</th>
+            <td>{{number_format($item->price)}}</td>
         </tr>
         <tr>
             <th>種別</th>
@@ -36,12 +39,12 @@
                 @endswitch</td>
         </tr>
         <tr>
-            <th>数量</th>
-            <td>{{$item->stock}}</td>
+            <th>在庫数</th>
+            <td>{{number_format($item->stock)}}</td>
         </tr>
         <tr>
             <th>商品詳細</th>
-            <td>{{$item->detail}}</td>
+            <td>{!!nl2br(e($item->detail))!!}</td>
         </tr>
         <tr>
             <th>登録日時</th>
@@ -53,7 +56,11 @@
         </tr>
         <tr>
             <th>商品画像</th>
-            <td></td>
+            <td>@if ($item->img)
+                            <img src="data:image/*;base64,{{ $item->img }}" alt="{{ $item->name }}" class="img-thumbnail" width="80" height="80">
+                        @else
+                            画像なし
+                        @endif</td>
         </tr>
     </table>
 </div>
