@@ -57,7 +57,7 @@ class AccountController extends Controller
     ]);
     $users->save();
     
-    return redirect()->route('login')->with('flash_message', 'アカウントの登録が完了しました。<br>ログインしてください。');
+    return redirect()->route('login')->with('flash_message', 'アカウントの登録が完了しました。<br>ログインをしてください。');
 }
 
 
