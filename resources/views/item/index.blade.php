@@ -1,5 +1,3 @@
-<!-- 共通のlayoutができればそれを利用する -->
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -35,10 +33,10 @@
             <thead>
                 <tr>
                     <th scope="col">#</th> <!-- 行番号のための列を追加 -->
-                    <th scope="col">ID</th>
+                    <th scope="col">商品番号</th>
                     <th scope="col">商品名</th>
                     <th scope="col">商品画像</th>
-                    <th scope="col">種類</th>
+                    <th scope="col">種別</th>
                     <th scope="col">価格</th>
                     <th scope="col">在庫数</th>
                     <th scope="col">　　　</th>
@@ -57,12 +55,11 @@
                             画像なし
                         @endif
                     </td>
-                        <!-- <img src="/item/edit/{{$item->img}}" alt="{{ $item->name }}" width="100"></td> -->
                     <td class="align-middle">
                         {{ $types[$item->type] }}
                     </td>
-                    <td class="align-middle">{{ $item->price }}</td>
-                    <td class="align-middle">{{ $item->stock }}</td>
+                    <td class="align-middle">{{ number_format($item->price) }}</td>
+                    <td class="align-middle">{{ number_format($item->stock) }}</td>
                     <td class="align-middle"><a href="/item/edit/{{$item->id}}" class="btn btn-primary btn-sm mx-1">編集</a></td>
                 </tr>
                 @endforeach

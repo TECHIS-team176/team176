@@ -1,5 +1,3 @@
-<!-- 共通のlayoutができればそれを利用する -->
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -14,7 +12,8 @@
         <h1>商品編集画面</h1>
 
         <div class="text-end" style="margin-right: 30px;">
-            <a href="/item" class="btn btn-primary mb-3">商品一覧に戻る</a>
+            <!-- <a href="/item" class="btn btn-primary mb-3" >商品一覧に戻る</a> -->
+            <a onClick="history.back()" class="btn btn-primary mb-3" >商品一覧に戻る</a>
         </div>
 
         <div class="card-body">
@@ -30,11 +29,10 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="type" class="form-label">種類:</label>
+                    <label for="type" class="form-label">種別:</label>
                     <select id="type" type="text" name="type" class="form-control">
                         <option value="99"> 選択してください </option>
                         @foreach([1 => '果物', 2 => '野菜', 3 => '肉', 4 => '魚', 5 => '調味料', 6 => '飲料', 7 => 'その他',] as $value => $label)
-                            <!-- <option value="{{ $value }}" {{ $item->type == $value ? 'selected' : '' }}>{{ $label }}</option> -->
                             <option value="{{ $value }}" {{ old('type', $item->type) == $value ? 'selected' : '' }}>{{ $label }}</option>
                         @endforeach
                     </select>
@@ -61,8 +59,6 @@
 
                 <div class="mb-3">
                     <label for="detail" class="form-label">商品詳細:</label>
-                    <!-- <input id="detail" type="text" name="detail" class="form-control" value="{{ $item->detail }}"> -->
-                    <!-- <textarea rows="3" style="resize:none" id="detail" type="text" name="detail" class="form-control" value="{{ old('detail',$item->detail) }}"></textarea> -->
                     <textarea rows="3" style="resize:none" id="detail" type="text" name="detail" class="form-control">{{ old('detail', $item->detail) }}</textarea>
 
                     @error('detail')
@@ -92,7 +88,6 @@
 
             <form method="POST" action="/item/destroy/{{$item->id}}" class="d-inline">
                 @csrf
-                <!-- <button type="submit" class="btn btn-danger btn-block">削除</button> -->
                 <button type="button" class="btn btn-danger btn-block" data-bs-toggle="modal" data-bs-target="#deleteModal" style="margin-top: 10px;">削除</button>
             </form>
         </div>

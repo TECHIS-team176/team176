@@ -1,5 +1,3 @@
-<!-- 共通のlayoutができればそれを利用する -->
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -14,7 +12,9 @@
             <h1>商品新規登録</h1>
 
             <div class="text-end" style="margin-right: 30px;">
-                <a href="/item" class="btn btn-primary mb-3">商品一覧に戻る</a>
+                <!-- <a href="/item" class="btn btn-primary mb-3">商品一覧に戻る</a> -->
+                <a onClick="history.back()" class="btn btn-primary mb-3" >商品一覧に戻る</a>
+
             </div>
 
             <form method="POST" action="/item/store" enctype="multipart/form-data" style="padding-right: 30px;">
@@ -30,16 +30,16 @@
             </div>
 
             <div class="mb-3">
-                <label for="type" class="form-label">種類:</label>
-                <select id="type" type="text" name="type" class="form-control" value="{{ old('type') }}">
+                <label for="type" class="form-label">種別:</label>
+                <select id="type" type="text" name="type" class="form-control" >
                     <option value="99"> 選択してください </option>
-                    <option value="1">果物</option>
-                    <option value="2">野菜</option>
-                    <option value="3">肉</option>
-                    <option value="4">魚</option>
-                    <option value="5">調味料</option>
-                    <option value="6">飲料</option>
-                    <option value="7">その他</option>
+                    <option value="1" @if(old('type') == '1') selected @endif>果物</option>
+                    <option value="2" @if(old('type') == '2') selected @endif>野菜</option>
+                    <option value="3" @if(old('type') == '3') selected @endif>肉</option>
+                    <option value="4" @if(old('type') == '4') selected @endif>魚</option>
+                    <option value="5" @if(old('type') == '5') selected @endif>調味料</option>
+                    <option value="6" @if(old('type') == '6') selected @endif>飲料</option>
+                    <option value="7" @if(old('type') == '7') selected @endif>その他</option>
                 </select>
                 @error('type')
                 <div class="text-danger">{{ $message }}</div>
@@ -64,7 +64,7 @@
 
             <div class="mb-3">
                 <label for="detail" class="form-label">商品詳細:</label>
-                <textarea rows="3" style="resize:none" id="detail" type="text" name="detail" class="form-control" value="{{ old('detail') }}"></textarea>
+                <textarea rows="3" style="resize:none" id="detail" type="text" name="detail" class="form-control">{{ old('detail') }}</textarea>
                 @error('detail')
                 <div class="text-danger">{{ $message }}</div>
                 @enderror
