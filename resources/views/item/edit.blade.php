@@ -12,8 +12,9 @@
         <h1>商品編集画面</h1>
 
         <div class="text-end" style="margin-right: 30px;">
-            <!-- <a href="/item" class="btn btn-primary mb-3" >商品一覧に戻る</a> -->
-            <a onClick="history.back()" class="btn btn-primary mb-3" >商品一覧に戻る</a>
+            <a href="{{url()->previous()}}" class="btn btn-primary mb-3" >商品一覧に戻る</a> <!-- 元いたページに戻る実装 -->
+            <!-- <a href="/item" class="btn btn-primary mb-3" >商品一覧に戻る</a> 1ページ目に戻る実装-->
+            <!-- <a onClick="history.back()" class="btn btn-primary mb-3" >商品一覧に戻る</a> １つ前に戻る実装-->
         </div>
 
         <div class="card-body">
