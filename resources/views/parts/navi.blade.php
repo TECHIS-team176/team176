@@ -15,23 +15,23 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav4" aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation" >
                 <span class="navbar-toggler-icon" ></span>
             </button>
-            <a class="navbar-brand" href="/home"><h3>食品商品管理システム</h3></a>
+            <a class="navbar-brand ms-5 fw-bold mb-0" href="#"><p style="font-size:20px;  margin-bottom: 0;">食品商品管理システム</p></a>
                 <div class="collapse navbar-collapse justify-content-start ">
                 <ul class="navbar-nav">
                     <!-- 全員に表示される   -->
                     <li class="nav-item active">
-                        <a class="nav-link ms-5 " href="/home"><h4>HOME</h4></a>
+                        <a class="nav-link ms-5 " href="/home">HOME</a>
                     </li> 
                     <li class="nav-item active">
-                        <a class="nav-link ms-5" href="/search"><h4>商品一覧/検索</h4></a>
+                        <a class="nav-link ms-5" href="/search">商品一覧/検索</a>
                     </li>
                     <!-- 管理者権限のみに表示される -->
                     @can('管理者') 
                     <li class="nav-item">
-                        <a class="nav-link ms-5" href="/item"><h4>商品管理</h4></a>
+                        <a class="nav-link ms-5" href="/item">商品管理</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link ms-5" href="/user"><h4>ユーザー管理</h4></a>
+                        <a class="nav-link ms-5" href="/user">ユーザー管理</a>
                     </li>
                     @endcan
                 </ul>
@@ -39,7 +39,7 @@
 
                 <!-- ログインユーザー表示 -->
                 <div class="nav-item">
-                    <p class="p-2 bd-highlight me-5 pt-4">ログインユーザー : {{Auth::user()->name}}</p>
+                    <p class="p-2 bd-highlight  pt-4">ログインユーザー : {{Auth::user()->name}}</p>
                 </div>
 
                 <!-- ログアウトボタン表示 -->

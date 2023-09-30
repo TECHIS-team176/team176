@@ -14,10 +14,12 @@
   
   <body>
       @include('parts.navi')
-    <!-- HOMEイメージ画像 -->
-      <div class="" style="">
-        <img src="img_sng/foodiesfeed.com_healthy-foods.jpg" class="text-align:center mt-5" style="width:70%; display: block; margin:auto;" alt="">
-      </div>
+    <!-- フラッシュメッセージ（ウェルカムメッセージ) -->
+      <div class="text-center mt-5" style="font-size:30px;">ようこそ、商品管理システムへ！</div>
+        <!-- HOMEイメージ画像 -->
+        <div class="" style="">
+          <img src="img_sng/foodiesfeed.com_healthy-foods.jpg" class="text-align:center mt-5" style="width:70%; display: block; margin:auto;" alt="">
+        </div>
 
   </body>
 </html>

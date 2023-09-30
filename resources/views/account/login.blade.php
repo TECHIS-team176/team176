@@ -19,9 +19,9 @@
 
             <!-- フラッシュメッセージ -->
                 @if (session('flash_message'))
-                    <p class="flash_message text-center mt-5" style="color:red; font-size:16px;">
+                    <div class="alert alert-info alert-dismissible fade show" role="alert" style="font-size:16px;">
                         {!! session('flash_message') !!}
-                    </p>
+                    </div>
                 @endif
 
                     <!-- ログイン入力フォーム -->
